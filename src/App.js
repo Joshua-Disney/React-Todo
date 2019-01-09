@@ -4,12 +4,8 @@ import TaskForm from './components/TodoComponents/TodoForm';
 
 const toDoData = [
   { taskName: "Clean garage",
-    id: 7897359874598723,
+    id: Date.now(),
     completed: false },
-  { taskName: "Wash Dishes" },
-  { taskName: "Vaccuum rug" },
-  { taskName: "Cook dinner" },
-  { taskName: "Play with Lynette" }
 ];
 
 class App extends React.Component {
@@ -34,7 +30,7 @@ class App extends React.Component {
     this.setState({
       taskList: [
         ...this.state.taskList,
-        { taskName: this.state.taskName }
+        { taskName: this.state.taskName, id: Date.now(), completed: false }
       ],
       taskName: ''
     });
@@ -54,7 +50,7 @@ class App extends React.Component {
         <TaskForm
           addNewTask={this.addNewTask}
           handleChanges={this.handleChanges}
-          taskName={this.taskName}
+          taskName={this.state.taskName}
           clearTask={this.clearTask}
         />
       </div>
