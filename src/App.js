@@ -39,14 +39,34 @@ class App extends React.Component {
   clearTask = event => {
     event.preventDefault();
     this.setState({
-      taskList: []
-    })
-  }
+      taskList: this.state.taskList.filter(
+        task => task.completed === false
+      )
+    });
+  };
+
+  toggleComplete = id => {
+    this.setState({
+      taskList: this.state.taskList.map(task => {
+        if (task.id === id) {
+          return {
+            ...task,
+            completed: !task.completed
+          };
+        } else {
+          return task;
+        }
+      })
+    });
+  };
 
   render() {
     return (
       <div className='App'>
-        <TaskList toDoList={this.state.taskList} />
+        <TaskList 
+          taskList={this.state.taskList}
+          toggleComplete={this.toggleComplete} 
+        />
         <TaskForm
           addNewTask={this.addNewTask}
           handleChanges={this.handleChanges}

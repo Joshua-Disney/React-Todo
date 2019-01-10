@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskForm = props => {
+const TaskForm = (props) => {
   return (
     <form onSubmit={props.addNewTask}>
       <input
@@ -11,7 +11,7 @@ const TaskForm = props => {
         onChange={props.handleChanges}
       />
       <button type='submit'>Add Task</button>
-      <button onClick={props.clearTask}>Clear All</button>
+      <button onClick={props.clearTask}>Clear Completed</button>
     </form>
   );
 };
