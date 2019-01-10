@@ -2,6 +2,8 @@ import React from 'react';
 import TaskList from './components/TodoComponents/TodoList';
 import TaskForm from './components/TodoComponents/TodoForm';
 
+import './app.css';
+
 const toDoData = [
   { taskName: "Clean garage",
     id: Date.now(),

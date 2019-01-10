@@ -9,6 +9,7 @@ const TaskForm = (props) => {
         name='taskName'
         placeholder='Name'
         onChange={props.handleChanges}
+        autoComplete='off'
       />
       <button type='submit'>Add Task</button>
       <button onClick={props.clearTask}>Clear Completed</button>
