@@ -1,4 +1,5 @@
 import React from 'react';
+import './Todo.css';
 
 const TaskForm = (props) => {
   return (
@@ -12,7 +13,9 @@ const TaskForm = (props) => {
         autoComplete='off'
       />
       <button type='submit'>Add Task</button>
-      <button onClick={props.clearTask}>Clear Completed</button>
+      <div>
+        <button onClick={props.clearTask}>Clear Completed</button>
+      </div>
     </form>
   );
 };

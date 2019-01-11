@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from './Todo';
+import './Todo.css';
 
 const TaskList = (props) => {
   return (
